@@ -12,5 +12,6 @@ RUN npm run build
 
 # >>> STAGE 2: deploy <<<
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # default command of nginx container will start the server, so no CMD required
